@@ -4,6 +4,7 @@ import 'package:minimal/components/color.dart';
 import 'package:minimal/components/spacing.dart';
 import 'package:minimal/components/text.dart';
 import 'package:minimal/components/typography.dart';
+import 'package:minimal/pages/page_list.dart';
 import 'package:minimal/pages/page_post.dart';
 import 'package:minimal/pages/page_typography.dart';
 
@@ -347,8 +348,7 @@ class MinimalMenuBar extends StatelessWidget {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 splashColor: Colors.transparent,
-                onTap: () => Navigator.popUntil(
-                    context, ModalRoute.withName(Navigator.defaultRouteName)),
+                onTap: () => Navigator.pushNamed(context, ListPage.name),
                 child: Text("MINIMAL",
                     style: GoogleFonts.montserrat(
                         color: textPrimary,
@@ -362,8 +362,7 @@ class MinimalMenuBar extends StatelessWidget {
                   child: Wrap(
                     children: <Widget>[
                       TextButton(
-                        onPressed: () => Navigator.popUntil(context,
-                            ModalRoute.withName(Navigator.defaultRouteName)),
+                        onPressed: () => Navigator.pushNamed(context, ListPage.name),
                         style: menuButtonStyle,
                         child: const Text(
                           "HOME",
